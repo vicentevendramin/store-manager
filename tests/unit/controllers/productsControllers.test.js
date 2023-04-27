@@ -13,7 +13,7 @@ describe('Verificando controller produtos cadastrados', () => {
     sinon.restore();
   });
 
-  describe('Listando os produtos cadastrados', () => {
+  describe('findAll function', () => {
     it('Deve retornar o status 200 e a lista', async () => {
       // Arrange
       const res = {};
@@ -34,7 +34,7 @@ describe('Verificando controller produtos cadastrados', () => {
     });
   });
 
-  describe('Buscando um produto cadastrado', () => {
+  describe('findById function', () => {
     it('Deve responder 200 e o produto desejado', async () => {
       const res = {};
       const req = {

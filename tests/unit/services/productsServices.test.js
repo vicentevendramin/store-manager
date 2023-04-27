@@ -9,7 +9,7 @@ describe('Verificando service produtos cadastrados', () => {
     sinon.restore();
   });
 
-  describe('Listagem dos produtos cadastrados', () => {
+  describe('findAll function', () => {
     it('Retorna a lista completa de produtos cadastrados', async () => {
       // Arrange
       sinon.stub(productModel, 'findAll').resolves(products);
@@ -21,7 +21,7 @@ describe('Verificando service produtos cadastrados', () => {
     });
   });
 
-  describe('Busca de um produto cadastrado', () => {
+  describe('findById function', () => {
     it('Retorna um erro caso o produto não exista', async () => {
       const result = await productService.findById(10);
 
