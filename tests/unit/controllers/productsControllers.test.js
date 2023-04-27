@@ -70,7 +70,7 @@ describe('Verificando controller produtos cadastrados', () => {
       await productController.getProduct(req, res);
 
       expect(res.status).to.have.been.calledWith(404);
-      expect(res.json).to.have.been.calledWith(errorMessage);
+      expect(res.json).to.have.been.calledWith({ message: errorMessage });
     });
   });
 });

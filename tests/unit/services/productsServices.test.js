@@ -23,7 +23,9 @@ describe('Verificando service produtos cadastrados', () => {
 
   describe('findById function', () => {
     it('Retorna um erro caso o produto não exista', async () => {
-      const result = await productService.findById(10);
+      sinon.stub(productModel, 'findById').resolves(undefined);
+
+      const result = await productService.findById(99);
 
       expect(result.type).to.equal('PRODUCT_NOT_FOUND');
       expect(result.message).to.equal('Product not found');
