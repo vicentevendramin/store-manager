@@ -7,6 +7,16 @@ const {
 
 const router = express.Router();
 
+router.get(
+  '/',
+  saleController.findAllSales,
+);
+
+router.get(
+  '/:id',
+  saleController.findAllSalesById,
+);
+
 router.post(
   '/',
   validateFields,
