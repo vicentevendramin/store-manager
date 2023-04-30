@@ -2,7 +2,11 @@ const { expect } = require('chai');
 const sinon = require('sinon');
 const { productService } = require('../../../src/services');
 const { productModel } = require('../../../src/models');
-const { products } = require('./mocks/product.service.mock');
+const {
+  products,
+  newProduct,
+  product,
+} = require('./mocks/product.service.mock');
 
 describe('Verificando service produtos cadastrados', () => {
   afterEach(() => {
@@ -38,6 +42,18 @@ describe('Verificando service produtos cadastrados', () => {
 
       expect(result.type).to.be.equal(null);
       expect(result.message).to.deep.equal(products[0]);
+    });
+  });
+
+  describe('insertProduct function', () => {
+    it('Retorna um erro caso não declarado o nome do produto', async () => {
+      sinon.stub(productModel, 'insert').resolves(4);
+      sinon.stub(productModel, 'findById').resolves(product);
+
+      const result = await productService.insertProduct(newProduct.name);
+
+      expect(result.type).to.be.equal(null);
+      expect(result.message).to.deep.equal(product);
     });
   });
 });

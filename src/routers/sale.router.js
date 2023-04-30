@@ -3,7 +3,7 @@ const { saleController } = require('../controllers');
 const {
   validateFields,
   validateQuantity,
-} = require('../middlewares/validateNewSale');
+} = require('../middlewares/validateNewSale.middleware');
 
 const router = express.Router();
 
