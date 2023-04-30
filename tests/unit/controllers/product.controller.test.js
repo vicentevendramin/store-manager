@@ -18,7 +18,7 @@ describe('Verificando controller produtos cadastrados', () => {
   });
 
   describe('findAll function', () => {
-    it('Deve retornar o status 200 e a lista', async () => {
+    it('Deve retornar o status 200 e a lista de produtos', async () => {
       // Arrange
       const res = {};
       const req = {};
