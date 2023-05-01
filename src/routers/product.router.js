@@ -9,7 +9,7 @@ router.get(
   productController.getProduct,
 );
 
-router.post(
+router.put(
   '/:id',
   validateNewProduct,
   productController.updateProduct,
