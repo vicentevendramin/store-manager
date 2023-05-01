@@ -31,13 +31,13 @@ const findAllSalesById = async (id) => {
   return sales;
 };
 
-const findSaleById = async (saleId) => {
-  const [[sale]] = await connection.execute(
-    'SELECT * FROM StoreManager.sales WHERE id = ?;',
-    [saleId],
-  );
-  return sale;
-};
+// const findSaleById = async (saleId) => {
+//   const [[sale]] = await connection.execute(
+//     'SELECT * FROM StoreManager.sales WHERE id = ?;',
+//     [saleId],
+//   );
+//   return sale;
+// };
 
 const insertSaleProduct = async ({ saleId, productId, quantity }) => {
   await connection.execute(
@@ -56,7 +56,7 @@ const insertSale = async () => {
 module.exports = {
   findAllSales,
   findAllSalesById,
-  findSaleById,
+  // findSaleById,
   insertSaleProduct,
   insertSale,
 };
