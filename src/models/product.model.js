@@ -36,7 +36,7 @@ const update = async (name, id) => {
 
 const deleteProduct = async (id) => {
   await connection.execute(
-    'DELETE FROM products WHERE id = ?',
+    'DELETE FROM products WHERE id = ?;',
     [id],
   );
 };

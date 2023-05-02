@@ -36,7 +36,7 @@ const deleteProduct = async (id) => {
 
   await productModel.deleteProduct(id);
 
-  return { type: null };
+  return { type: null, message: '' };
 };
 
 module.exports = {
