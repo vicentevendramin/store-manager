@@ -3,8 +3,6 @@ const { productService } = require('../services');
 const listProducts = async (_req, res) => {
   const { message } = await productService.findAll();
 
-  // if (type) return res.status(type).json(message);
-
   res.status(200).json(message);
 };
 
@@ -36,9 +34,20 @@ const updateProduct = async (req, res) => {
   res.status(200).json(message);
 };
 
+const deleteProduct = async (req, res) => {
+  const { id } = req.params;
+
+  const { type, message } = await productService.deleteProduct(id);
+
+  if (type) return res.status(404).json({ message });
+
+  res.status(204);
+};
+
 module.exports = {
   listProducts,
   getProduct,
   insertProduct,
   updateProduct,
+  deleteProduct,
 };

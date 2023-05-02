@@ -15,6 +15,11 @@ router.put(
   productController.updateProduct,
 );
 
+router.delete(
+  '/:id',
+  productController.deleteProduct,
+);
+
 router.get(
   '/',
   productController.listProducts,
