@@ -17,6 +17,13 @@ router.get(
   saleController.findAllSalesById,
 );
 
+router.put(
+  '/:id',
+  validateFields,
+  validateQuantity,
+  saleController.updateSale,
+);
+
 router.delete(
   '/:id',
   saleController.deleteSale,

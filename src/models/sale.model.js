@@ -31,13 +31,13 @@ const findAllSalesById = async (id) => {
   return sales;
 };
 
-// const findSaleById = async (saleId) => {
-//   const [[sale]] = await connection.execute(
-//     'SELECT * FROM StoreManager.sales WHERE id = ?;',
-//     [saleId],
-//   );
-//   return sale;
-// };
+const findSaleById = async (saleId) => {
+  const [[sale]] = await connection.execute(
+    'SELECT * FROM StoreManager.sales WHERE id = ?;',
+    [saleId],
+  );
+  return sale;
+};
 
 const insertSaleProduct = async ({ saleId, productId, quantity }) => {
   await connection.execute(
@@ -51,6 +51,20 @@ const insertSale = async () => {
     'INSERT INTO sales (date) VALUES (NOW());',
   );
   return insertId;
+};
+
+const updateSale = async ({ id, productId, quantity }) => {
+  await connection.execute(
+    `UPDATE
+      sales_products
+    SET
+      quantity = ?
+    WHERE
+      product_id = ?
+    AND
+      sale_id = ?;`,
+    [quantity, productId, id],
+  );
 };
 
 const deleteSale = async (id) => {
@@ -67,8 +81,9 @@ const deleteSale = async (id) => {
 module.exports = {
   findAllSales,
   findAllSalesById,
-  // findSaleById,
+  findSaleById,
   insertSaleProduct,
   insertSale,
   deleteSale,
+  updateSale,
 };
