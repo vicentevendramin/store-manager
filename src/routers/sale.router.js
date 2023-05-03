@@ -17,6 +17,11 @@ router.get(
   saleController.findAllSalesById,
 );
 
+router.delete(
+  '/:id',
+  saleController.deleteSale,
+);
+
 router.post(
   '/',
   validateFields,
