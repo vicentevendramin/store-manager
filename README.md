@@ -79,7 +79,7 @@ A organização do projeto segue a arquitetura MSC, com testes unitários para c
        │   ├── sale.model.test.js
        │   └── mocks/
        │
-       ├── services/                    # Testes para os serviços
+       └── services/                    # Testes para os serviços
            ├── product.service.test.js
            ├── sale.service.test.js
            └── mocks/
