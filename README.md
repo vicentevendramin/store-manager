@@ -92,7 +92,7 @@ A organização do projeto segue a arquitetura MSC, com testes unitários para c
 1. Clone este repositório:
 
     ```bash
-    git clone https://github.com/seu-usuario/store-manager.git
+    git clone https://github.com/vicentevendramin/store-manager.git
     cd store-manager
     ```
 
